@@ -2,13 +2,9 @@ package tests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CoursesPage;
-
-import java.time.Duration;
 
 public class CourseTest extends BaseTest {
 
@@ -18,10 +14,11 @@ public class CourseTest extends BaseTest {
         driver.get("https://eyouthlearning.com/en/courses");
         CoursesPage coursesPage = new CoursesPage(driver);
         clickFirstCourse(coursesPage);
-        Assert.assertTrue(driver.getCurrentUrl().contains("power-bi") ||
-                        driver.getCurrentUrl().contains("course") ||
-                        driver.getCurrentUrl().contains("en/"),
+        Assert.assertTrue(driver.getCurrentUrl().contains("courses"),
                 "Should navigate to course details page");
+        Assert.assertTrue(driver.getPageSource().contains("Overview") ||
+                        driver.getPageSource().contains("Course Content"),
+                "Course details section should be displayed");
     }
 
     @Test(description = "TC11 - Verify course card UI elements")
