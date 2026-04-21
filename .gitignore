@@ -1,0 +1,5 @@
+target/
+.allure/
+.idea/
+*.class
+config.properties

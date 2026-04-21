@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EYOUTH Automation Suite" verbose="1">
+    <test name="All Tests">
+        <classes>
+            <class name="tests.SearchTest"/>
+            <class name="tests.CourseTest"/>
+            <class name="tests.AuthTest"/>
+            <class name="tests.FooterTest"/>
+            <class name="tests.E2ETest"/>
+        </classes>
+    </test>
+</suite>
